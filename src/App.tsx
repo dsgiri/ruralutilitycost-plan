@@ -77,10 +77,12 @@ export default function App() {
           <span className="opacity-30 hidden md:inline">|</span>
           <span className="font-medium text-[#2D5A27]">Service Connectivity: Optimal</span>
         </div>
-        <div className="flex gap-6 uppercase tracking-wider font-bold">
-          <a href="#" className="hover:text-[#2D5A27]">Methodology</a>
-          <a href="#" className="hover:text-[#2D5A27]">Help Center</a>
-          <a href="#" className="hover:text-[#2D5A27]">API Docs</a>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 uppercase tracking-wider font-bold mt-2 md:mt-0">
+          <a href="https://ruralutilitycost.com/about" className="hover:text-[#2D5A27]">About Us</a>
+          <a href="https://ruralutilitycost.com/contact" className="hover:text-[#2D5A27]">Contact Us</a>
+          <a href="https://ruralutilitycost.com/privacy-policy" className="hover:text-[#2D5A27]">Privacy Policy</a>
+          <a href="https://ruralutilitycost.com/terms-of-use" className="hover:text-[#2D5A27]">Terms of Use</a>
+          <a href="https://ruralutilitycost.com/disclaimer" className="hover:text-[#2D5A27]">Disclaimer</a>
         </div>
       </footer>
     </div>
