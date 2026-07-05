@@ -222,6 +222,58 @@ export function FertilizerCostPage() {
           </CardContent>
         </Card>
       </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <Card className="bg-white border-[#D1D5D2]">
+          <CardHeader>
+            <CardTitle><span className="text-[#2D5A27]">03</span> Methodology & Formulas</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm text-gray-700">
+            <div>
+              <h4 className="font-bold text-[#1A1C1A] mb-1">Cost Per Acre</h4>
+              <p className="mb-2">Calculated by determining the total cost of the product applied per acre.</p>
+              <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-xs">
+                Dry: (App Rate lbs / 2000) × Price per Ton<br/>
+                Liquid: App Rate gal × (Price per Ton / 2000) × Density
+              </div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#1A1C1A] mb-1">Total Field Cost</h4>
+              <p className="mb-2">The aggregate cost for the entire field area.</p>
+              <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-xs">
+                Cost Per Acre × Total Acres
+              </div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#1A1C1A] mb-1">Cost Per Pound of Nutrient</h4>
+              <p className="mb-2">Isolates the cost of a specific nutrient based on its percentage analysis in the product.</p>
+              <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-xs">
+                Cost Per Acre / (App Rate × (Nutrient % / 100))
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-white border-[#D1D5D2]">
+          <CardHeader>
+            <CardTitle><span className="text-[#2D5A27]">04</span> Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm text-gray-700">
+            <div>
+              <h4 className="font-bold text-[#1A1C1A]">Why do I need to enter product density for liquids?</h4>
+              <p className="mt-1">Liquid fertilizers are typically priced by the ton but applied by the gallon. The density (lbs/gal) is required to convert the application rate back to a tonnage basis for accurate cost calculation.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#1A1C1A]">Does this include application costs?</h4>
+              <p className="mt-1">No, this calculator strictly computes the material cost of the fertilizer product. Application fees, fuel surcharges, and equipment wear should be budgeted separately.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#1A1C1A]">How is the Cost/lb of a specific nutrient calculated if the product has multiple nutrients?</h4>
+              <p className="mt-1">The calculator assigns the full material cost to each individual nutrient for comparison purposes. If you are applying a blended fertilizer (like DAP 18-46-0), the cost per pound of Nitrogen assumes Nitrogen carries the full cost burden, and similarly for Phosphorus. This is a standard method for single-nutrient price comparisons.</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

@@ -196,6 +196,57 @@ export function SeedCostPage() {
           </CardContent>
         </Card>
       </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <Card className="bg-white border-[#D1D5D2]">
+          <CardHeader>
+            <CardTitle><span className="text-[#2D5A27]">03</span> Methodology & Formulas</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm text-gray-700">
+            <div>
+              <h4 className="font-bold text-[#1A1C1A] mb-1">Cost Per Acre</h4>
+              <p className="mb-2">Calculated by determining the total units required per acre and applying the effective unit cost.</p>
+              <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-xs">
+                (App Rate / Amount per Unit) × (Price + Tech Fee)
+              </div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#1A1C1A] mb-1">Total Field Cost</h4>
+              <p className="mb-2">The aggregate cost for the entire field area.</p>
+              <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-xs">
+                Cost Per Acre × Total Acres
+              </div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#1A1C1A] mb-1">Total Units Required</h4>
+              <p className="mb-2">Determines how many bags or bulk units must be purchased. We do not round up to the nearest whole bag to allow for bulk pricing analysis.</p>
+              <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-xs">
+                (App Rate × Total Acres) / Amount per Unit
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-white border-[#D1D5D2]">
+          <CardHeader>
+            <CardTitle><span className="text-[#2D5A27]">04</span> Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm text-gray-700">
+            <div>
+              <h4 className="font-bold text-[#1A1C1A]">How are Technology Fees handled?</h4>
+              <p className="mt-1">Many modern seed varieties charge a separate technology or trait fee per unit. This calculator adds the tech fee directly to the base price per unit to establish an effective price per unit before calculating acreage costs.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#1A1C1A]">Why calculate based on 'Seeds per Acre' vs 'Pounds per Acre'?</h4>
+              <p className="mt-1">Corn and soybeans are typically planted and priced based on seed counts (e.g., 80,000 seeds per bag for corn). Small grains like wheat or oats are often planted and priced by weight (pounds or bushels). The calculator adapts to either method.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#1A1C1A]">Does this account for seed replant policies?</h4>
+              <p className="mt-1">No, this computes initial upfront material cost. Replant agreements and seed treatments should be evaluated separately in your enterprise budget.</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

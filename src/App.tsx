@@ -23,8 +23,8 @@ export default function App() {
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
           </div>
           <div>
-            <h1 className="text-lg font-bold leading-none tracking-tight">RuralUtilityCost.com</h1>
-            <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 hidden sm:block">Farm Input Cost Engineering Cluster</p>
+            <h1 className="text-lg font-bold leading-none tracking-tight">RuralOpsTools.com</h1>
+            <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 hidden sm:block">Plan: The budgeting & preparation hub for Rural Ops Tools</p>
           </div>
         </div>
         <div className="flex gap-1 text-sm font-medium w-full md:w-auto overflow-x-auto pb-1 md:pb-0 hide-scrollbar">
@@ -73,16 +73,17 @@ export default function App() {
 
       <footer className="py-4 md:h-10 bg-white border-t border-[#D1D5D2] px-4 md:px-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-gray-500 shrink-0 gap-3 md:gap-0">
         <div className="flex gap-2 md:gap-4 flex-wrap justify-center text-center">
-          <span>&copy; {new Date().getFullYear()} RuralUtilityCost.com</span>
+          <span>&copy; {new Date().getFullYear()} RuralOpsTools.com</span>
           <span className="opacity-30 hidden md:inline">|</span>
           <span className="font-medium text-[#2D5A27]">Service Connectivity: Optimal</span>
         </div>
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 uppercase tracking-wider font-bold mt-2 md:mt-0">
-          <a href="https://ruralutilitycost.com/about" className="hover:text-[#2D5A27]">About Us</a>
-          <a href="https://ruralutilitycost.com/contact" className="hover:text-[#2D5A27]">Contact Us</a>
-          <a href="https://ruralutilitycost.com/privacy-policy" className="hover:text-[#2D5A27]">Privacy Policy</a>
-          <a href="https://ruralutilitycost.com/terms-of-use" className="hover:text-[#2D5A27]">Terms of Use</a>
-          <a href="https://ruralutilitycost.com/disclaimer" className="hover:text-[#2D5A27]">Disclaimer</a>
+          <a href="https://ruralopstools.com/about" className="hover:text-[#2D5A27]">About Us</a>
+          <a href="https://ruralopstools.com/contact" className="hover:text-[#2D5A27]">Contact Us</a>
+          <a href="https://ruralopstools.com/privacy-policy" className="hover:text-[#2D5A27]">Privacy Policy</a>
+          <a href="https://ruralopstools.com/terms-of-use" className="hover:text-[#2D5A27]">Terms of Use</a>
+          <a href="https://ruralopstools.com/license" className="hover:text-[#2D5A27]">License</a>
+          <a href="https://ruralopstools.com/disclaimer" className="hover:text-[#2D5A27]">Disclaimer</a>
         </div>
       </footer>
     </div>
