@@ -3,14 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import { Ticker } from './features/farm-input-cost/ticker/Ticker';
 import { FertilizerCostPage } from './features/farm-input-cost/fertilizer-cost/FertilizerCostPage';
 import { SeedCostPage } from './features/farm-input-cost/seed-cost/SeedCostPage';
 import { SpotRatesPage } from './features/farm-input-cost/spot-rates/SpotRatesPage';
 
-export default function App() {
-  const [activeTab, setActiveTab] = useState<'fertilizer' | 'seed' | 'spot'>('fertilizer');
+function AppLayout() {
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   return (
     <div className="min-h-screen bg-[#F4F5F4] text-[#1A1C1A] flex flex-col font-sans selection:bg-[#2D5A27] selection:text-white">
@@ -33,24 +35,24 @@ export default function App() {
           >
             <span className="text-[14px]">🔒</span> Vault
           </button>
-          <button 
-            onClick={() => setActiveTab('fertilizer')}
-            className={`px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider rounded transition-colors whitespace-nowrap shrink-0 ${activeTab === 'fertilizer' ? 'bg-[#2D5A27] text-white shadow-sm' : 'text-gray-600 hover:text-[#2D5A27] hover:bg-gray-100'}`}
+          <Link
+            to="/fertilizer-cost"
+            className={`px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider rounded transition-colors whitespace-nowrap shrink-0 ${(currentPath === '/fertilizer-cost' || currentPath === '/') ? 'bg-[#2D5A27] text-white shadow-sm' : 'text-gray-600 hover:text-[#2D5A27] hover:bg-gray-100'}`}
           >
             Fertilizer Cost
-          </button>
-          <button 
-            onClick={() => setActiveTab('seed')}
-            className={`px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider rounded transition-colors whitespace-nowrap shrink-0 ${activeTab === 'seed' ? 'bg-[#2D5A27] text-white shadow-sm' : 'text-gray-600 hover:text-[#2D5A27] hover:bg-gray-100'}`}
+          </Link>
+          <Link
+            to="/seed-cost"
+            className={`px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider rounded transition-colors whitespace-nowrap shrink-0 ${currentPath === '/seed-cost' ? 'bg-[#2D5A27] text-white shadow-sm' : 'text-gray-600 hover:text-[#2D5A27] hover:bg-gray-100'}`}
           >
             Seed Cost
-          </button>
-          <button 
-            onClick={() => setActiveTab('spot')}
-            className={`px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider rounded transition-colors whitespace-nowrap shrink-0 ${activeTab === 'spot' ? 'bg-[#2D5A27] text-white shadow-sm' : 'text-gray-600 hover:text-[#2D5A27] hover:bg-gray-100'}`}
+          </Link>
+          <Link
+            to="/spot-rates"
+            className={`px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider rounded transition-colors whitespace-nowrap shrink-0 ${currentPath === '/spot-rates' ? 'bg-[#2D5A27] text-white shadow-sm' : 'text-gray-600 hover:text-[#2D5A27] hover:bg-gray-100'}`}
           >
              Inspector Mode
-          </button>
+          </Link>
         </div>
       </header>
 
@@ -66,9 +68,13 @@ export default function App() {
             </div>
         </div>
 
-        {activeTab === 'fertilizer' && <FertilizerCostPage />}
-        {activeTab === 'seed' && <SeedCostPage />}
-        {activeTab === 'spot' && <SpotRatesPage />}
+        <Routes>
+          <Route path="/" element={<Navigate to="/fertilizer-cost" replace />} />
+          <Route path="/fertilizer-cost" element={<FertilizerCostPage />} />
+          <Route path="/seed-cost" element={<SeedCostPage />} />
+          <Route path="/spot-rates" element={<SpotRatesPage />} />
+          <Route path="*" element={<Navigate to="/fertilizer-cost" replace />} />
+        </Routes>
       </main>
 
       <footer className="py-4 md:h-10 bg-white border-t border-[#D1D5D2] px-4 md:px-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-gray-500 shrink-0 gap-3 md:gap-0">
@@ -87,5 +93,13 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppLayout />
+    </BrowserRouter>
   );
 }
